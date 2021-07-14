@@ -101,7 +101,7 @@ const Login = () => {
           />
         </div>
 
-        <Button onClick={onLogin} text={"Iniciar Sesión"} />
+        <Button onClick={onLogin} text={"Iniciar Sesión"} big={true} />
       </div>
     </div>
   );

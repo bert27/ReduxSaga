@@ -113,7 +113,7 @@ const UsersIndex = (props) => {
   }, [usersdata]);
 
   return (
-    <PageUsers>
+    <PageUsers data-testid="PageUsers">
       <Head />
       <ListUsersFather>{listUsers()}</ListUsersFather>
 

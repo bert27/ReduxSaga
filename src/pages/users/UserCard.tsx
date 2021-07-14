@@ -73,7 +73,7 @@ const UserCard = (props) => {
   const { item } = props;
 
   return (
-    <Card>
+    <Card data-testid="Card">
       <Picture key={item.id} id={item.id}>
         <div>
           {item.avatar ? (

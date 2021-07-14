@@ -16,6 +16,9 @@ Para instalación de dependencias
 ### `npm start`
 Entorno de desarrollo
 
+### `npm test`
+Ejecutar los test
+
 ## Memoria
 
 *** Puedes documentar aquí la memoria de tu prueba ***
@@ -34,3 +37,5 @@ Si el usuario no introduce este password no podrá acceder a la vista users.
 Se importa react-use-ripple para el efecto de los botones, es un efecto tipo flutter o material design.  --- 27.5kb.
 
 --
+Se incorpora redux-mock-store para poder hacer testing comprobando que se estan renderizando los divs bucando por id. Sin esta biblioteca daba error al comprobar por este método, siempre que hubiese en el archivo un dispatch de redux. El problema es que busca el provider que esta en el padre.
+--- 14.2 kb
