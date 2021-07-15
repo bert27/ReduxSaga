@@ -2,14 +2,16 @@ export const GET_TOKEN = "GET_TOKEN";
 export const getToken = (data) => ({
   type: GET_TOKEN,
   payload: {
-    data: data,
+    data,
   },
 });
 
 export const GET_TOKEN_SUCCESS = `${GET_TOKEN}_SUCCESS`;
 export const getLoginSuccess = (data) => ({
   type: GET_TOKEN_SUCCESS,
-  payload: data,
+  payload: {
+    token: data,
+  },
 });
 
 export const GET_TOKEN_FAIL = `${GET_TOKEN}_FAIL`;

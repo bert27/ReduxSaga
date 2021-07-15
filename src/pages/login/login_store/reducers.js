@@ -1,9 +1,13 @@
 import * as actions from "./actions";
-const initial = {
+export const initial = {
   data: {
-    user: undefined,
+    email: undefined,
     password: undefined,
   },
+
+  token: undefined,
+  inProgress: false,
+  error: false,
 };
 
 function LoginReducer(state = initial, action) {
@@ -13,17 +17,15 @@ function LoginReducer(state = initial, action) {
     case actions.GET_TOKEN:
       return {
         ...state,
-        data: {
-          data: payload,
-        },
+        ...action.payload,
       };
+
     case actions.GET_TOKEN_SUCCESS:
       return {
-        data: {
-          inProgress: false,
-          data: payload,
-        },
+        ...state,
+        ...action.payload,
       };
+
     case actions.GET_TOKEN_FAIL:
       return {
         ...state,

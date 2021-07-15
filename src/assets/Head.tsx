@@ -4,7 +4,7 @@ import Button from "assets/input/Button";
 import { useHistory } from "react-router-dom";
 
 import * as actions from "pages/login/login_store/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 const Headf = styled.div`
   display: flex;
   align-items: center;
@@ -40,16 +40,14 @@ const Buttonf = styled.div`
 const Head = () => {
   //Redux
   const dispatch = useDispatch();
-  let login = useSelector((state: any) => {
-    return state.login;
-  }); //
+
   const history = useHistory();
   const Onlogout = useCallback(() => {
     //Redux action:
     dispatch(actions.closeSesion());
     localStorage.removeItem("authToken");
     history.push("/login");
-  }, [history]);
+  }, [history, dispatch]);
   return (
     <Headf>
       <Buttonf>

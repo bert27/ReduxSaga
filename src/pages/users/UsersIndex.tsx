@@ -5,7 +5,8 @@ import { useHistory } from "react-router-dom";
 import UsersLoading from "./UsersLoading";
 import UserCard from "./UserCard";
 import Head from "assets/Head";
-import * as actions from "./users_store/actions";
+import * as actionsUsers from "./users_store/actions";
+import * as actionsLogin from "pages/login/login_store/actions";
 import { useDispatch, useSelector } from "react-redux";
 const ListUsersFather = styled.div`
   display: flex;
@@ -48,7 +49,8 @@ const UsersIndex = (props) => {
   const checkLogin = useCallback(() => {
     //if token in localstorage, load users page to redux saga:
     if (localStorage.getItem("authToken") !== null) {
-      dispatch(actions.getUsers(npage));
+      dispatch(actionsLogin.getLoginSuccess(localStorage.getItem("authToken")));
+      dispatch(actionsUsers.getUsers(npage));
     } else {
       history.push("/login");
     }
@@ -87,7 +89,7 @@ const UsersIndex = (props) => {
 
   //Butons next and back:
   const nextPage = useCallback(() => {
-    dispatch(actions.getUsers(2));
+    dispatch(actionsUsers.getUsers(2));
 
     history.push({
       pathname: `/users/${2}`,
@@ -95,7 +97,7 @@ const UsersIndex = (props) => {
   }, [dispatch, history]);
 
   const backPage = useCallback(() => {
-    dispatch(actions.getUsers(1));
+    dispatch(actionsUsers.getUsers(1));
 
     history.push({
       pathname: `/users/${1}`,

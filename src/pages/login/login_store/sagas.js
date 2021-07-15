@@ -3,9 +3,8 @@ import * as actions from "./actions";
 import { apiPost } from "services/helper";
 import { all } from "redux-saga/effects";
 
-function* getToken(action) {
+export function* getToken(action) {
   const { data } = action.payload;
-
   try {
     const results = yield call(
       apiPost,
