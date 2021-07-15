@@ -32,8 +32,7 @@ describe("Login actions", () => {
   test("Login / CLOSE_SESION", () => {
     const expectedAction = {
       type: actions.CLOSE_SESION,
-      payload: "query",
     };
-    expect(actions.closeSesion("query")).toEqual(expectedAction);
+    expect(actions.closeSesion()).toEqual(expectedAction);
   });
 });

@@ -20,7 +20,7 @@ export const getLoginFail = (error) => ({
   payload: error,
 });
 export const CLOSE_SESION = "CLOSE_SESION";
-export const closeSesion = (data) => ({
+export const closeSesion = () => ({
   type: CLOSE_SESION,
-  payload: data,
+
 });
