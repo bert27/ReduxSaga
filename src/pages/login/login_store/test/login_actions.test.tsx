@@ -1,7 +1,7 @@
 import * as actions from "pages/login/login_store/actions";
 
-describe("UserList actions", () => {
-  test("Users / GET_TOKEN", () => {
+describe("Login actions", () => {
+  test("Login / GET_TOKEN", () => {
     const expectedAction = {
       type: actions.GET_TOKEN,
       payload: {
@@ -11,7 +11,7 @@ describe("UserList actions", () => {
     expect(actions.getToken("query")).toEqual(expectedAction);
   });
 
-  test("Users / GET_TOKEN_SUCCESS", () => {
+  test("Login / GET_TOKEN_SUCCESS", () => {
     const expectedAction = {
       type: actions.GET_TOKEN_SUCCESS,
       payload: {
@@ -21,7 +21,7 @@ describe("UserList actions", () => {
     expect(actions.getLoginSuccess("query")).toEqual(expectedAction);
   });
 
-  test("Users / GET_TOKEN_FAIL", () => {
+  test("Login / GET_TOKEN_FAIL", () => {
     const expectedAction = {
       type: actions.GET_TOKEN_FAIL,
       payload: "query",
@@ -29,7 +29,7 @@ describe("UserList actions", () => {
     expect(actions.getLoginFail("query")).toEqual(expectedAction);
   });
 
-  test("Users / CLOSE_SESION", () => {
+  test("Login / CLOSE_SESION", () => {
     const expectedAction = {
       type: actions.CLOSE_SESION,
       payload: "query",
