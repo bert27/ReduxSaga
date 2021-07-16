@@ -1,10 +1,19 @@
 import React from "react";
 import UserCard from "./UserCard";
-const UsersLoading = (props) => {
-  const item = {
-    id: "loading",
-  };
 
+interface user {
+  avatar: string;
+  email: string;
+  first_name: string;
+  id: number;
+  last_name: string;
+}
+
+export interface Props {
+  item: user;
+}
+
+function UsersLoading({ item }: Props) {
   return (
     <>
       <UserCard key={1} item={item} />
@@ -15,6 +24,6 @@ const UsersLoading = (props) => {
       <UserCard key={6} item={item} />
     </>
   );
-};
+}
 
 export default UsersLoading;

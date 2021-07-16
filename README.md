@@ -35,3 +35,8 @@ Si el usuario no introduce este password no podrá acceder a la vista users.
 ---
 
 Se importa react-use-ripple para el efecto de los botones, es un efecto tipo flutter o material design.  --- 27.5kb.
+
+---
+Se importa file-loader para poder importar imagenes locales en componentes.
+Usado para añadir un icono al lado del mensaje de error cuando se introducen contraseña o email erroneos.
+https://www.npmjs.com/package//file-loader --- 28.1kb

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 const Card = styled.div`
   display: flex;
@@ -69,14 +69,24 @@ const TextLoadingEmail = styled.div`
   }
 `;
 
-const UserCard = (props) => {
-  const { item } = props;
+interface user {
+  avatar: string;
+  email: string;
+  first_name: string;
+  id: number;
+  last_name: string;
+}
 
+export interface Props {
+  item: user;
+}
+
+function UserCard({ item }: Props) {
   return (
     <Card data-testid="Card">
-      <Picture key={item.id} id={item.id}>
+      <Picture key={item.id.toString()} id={item.id.toString()}>
         <div>
-          {item.avatar ? (
+          {item.id !== 0 ? (
             <img
               style={{
                 borderRadius: "50%",
@@ -92,19 +102,19 @@ const UserCard = (props) => {
         </div>
 
         <TextBox>
-          {item.last_name ? (
+          {item.id !== 0 ? (
             <div
               style={{
                 marginBottom: "5px",
               }}
             >
-              {item.name}
+              {item.email}
             </div>
           ) : (
             <TextLoading />
           )}
 
-          {item.last_name ? (
+          {item.id !== 0 ? (
             <div
               style={{
                 marginBottom: "5px",
@@ -116,7 +126,7 @@ const UserCard = (props) => {
             <TextLoading />
           )}
 
-          {item.email ? (
+          {item.id !== 0 ? (
             <div
               style={{
                 marginBottom: "5px",
@@ -131,6 +141,6 @@ const UserCard = (props) => {
       </Picture>
     </Card>
   );
-};
+}
 
 export default UserCard;

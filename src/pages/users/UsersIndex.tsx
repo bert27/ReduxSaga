@@ -33,6 +33,16 @@ const PageUsers = styled.div`
     min-height: 100vh;
   }
 `;
+
+//id 0 initial for users cards, when is 0 view skeleton
+const usersLoadingSkeleton = {
+  avatar: "0",
+  email: "0",
+  first_name: "0",
+  id: 0,
+  last_name: "0",
+};
+
 const UsersIndex = (props) => {
   //Redux
   const dispatch = useDispatch();
@@ -110,7 +120,7 @@ const UsersIndex = (props) => {
         return <UserCard item={item} key={index} />;
       });
     } else {
-      return <UsersLoading />;
+      return <UsersLoading item={usersLoadingSkeleton} />;
     }
   }, [usersdata]);
 

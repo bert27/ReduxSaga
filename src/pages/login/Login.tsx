@@ -4,6 +4,7 @@ import Button from "assets/input/Button";
 import { useHistory } from "react-router-dom";
 import * as actions from "./login_store/actions";
 import { useDispatch, useSelector } from "react-redux";
+
 const Login = () => {
   //Redux
   const dispatch = useDispatch();
@@ -11,10 +12,11 @@ const Login = () => {
     return state.login;
   }); //
   const passwordok = "cityslicka";
+  const emailok = "eve.holt@reqres.in";
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const history = useHistory();
-  const [error, seterror] = useState({
+  let [error, seterror] = useState({
     password: "",
     email: "",
   });
@@ -30,8 +32,8 @@ const Login = () => {
   const onLogin = useCallback(() => {
     let re =
       /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@(([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (passwordok === password && re.test(email)) {
+    //Check if login ok
+    if (passwordok === password && emailok === email && re.test(email)) {
       const data = {
         email: email,
         password: password,
@@ -40,16 +42,19 @@ const Login = () => {
       //Redux action:
       dispatch(actions.getToken(data));
     }
-
-    let errortmp = error;
+    //Check errors:
     if (passwordok !== password) {
-      errortmp = { ...errortmp, password: "contraseña incorrecta" };
+      error = { ...error, password: "contraseña incorrecta" };
+    } else {
+      error = { ...error, password: "" };
     }
-    if (!re.test(email)) {
-      errortmp = { ...errortmp, email: "correo incorrecto" };
+    if (!re.test(email) && emailok !== email) {
+      error = { ...error, email: "correo incorrecto" };
+    } else {
+      error = { ...error, email: "" };
     }
 
-    seterror(errortmp);
+    seterror(error);
   }, [email, password, error, dispatch]);
 
   const onChangeEmail = useCallback((newemail) => {
@@ -92,7 +97,6 @@ const Login = () => {
             onChange={onChangeEmail}
             error={error.email}
           />
-
           <Input
             name="Contraseña"
             type={"password"}
