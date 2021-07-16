@@ -69,4 +69,9 @@ Se han añadido tests para las acciones del boton con firevent y tests en las ac
 
 Los botones e inputs son todos el mismo componente para facilitar la edición y la creación de una biblioteca de componentes. 
 
+-Desconexión:
+
+El token se aloja en redux y en localstorage. Al cargar de nuevo se comprueba si existe en localstorage. Si es así vuelve  a cargarla y redirige a la vista users.
+Cuando se hace click en desconectar, se borra de localstorage y se reedirige a /login
+
 ---
