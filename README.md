@@ -48,3 +48,25 @@ https://www.npmjs.com/package//file-loader --- 28.1kb
 
 ---
 
+Explicación de la app:
+
+Cuando se introduce el usuario y la contraseña indicadas, se pasa de la vista login a la vista users.
+
+Esta vista lee de la api cuantas páginas existen y crea la lógica de los botones de manera dinámica. El enrutamiento también es dínamico.
+
+El diseño usa stylesComponenets con mediaquery para un diseño responsive desde iphone 5.
+
+Se ha pensado en minimizar la espera del usuario entre cargas, añadiendo efecto en el botón y un esqueleton en la vista de usuarios.
+Mientras no recibe ninguna id de ningun usuario, la id será 0 y se mostrará esqueleton. (Elementos en gris)
+
+Las acciones del programa se realizan mediante redux, actions y reducers.
+
+Las acciones iniciales ejecutan reduxsaga para llamar a una función que recoge los endpoints. La toma del token en el inicio de sesión y la lista de usuarios por página.
+
+Al refrescar con f5 siempre se realiza la petición de usuarios, me ha faltado añadir persistencia. 
+
+Se han añadido tests para las acciones del boton con firevent y tests en las acciones y unas pocas de reductores.
+
+Los botones e inputs son todos el mismo componente para facilitar la edición y la creación de una biblioteca de componentes. 
+
+---
