@@ -1,4 +1,11 @@
 # Prueba técnica React de LaLiga
+
+---
+<div classname="center">
+<img src="https://i.ibb.co/w6XHtGC/reduxsaga-Test.png" >
+</div>
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Versión de Node: 12.16.1 o superior
@@ -20,9 +27,7 @@ Entorno de desarrollo
 Ejecutar los test
 
 ## Memoria
-
-*** Puedes documentar aquí la memoria de tu prueba ***
-
+---
 Se incorpora la carpeta theme con los estilos generales.
 
 El requisito de resolución en modo mvl es de "375px x 667px" pero esto provoca que en iphone x y android con pantalla grande se vea en modo pc.
@@ -40,3 +45,6 @@ Se importa react-use-ripple para el efecto de los botones, es un efecto tipo flu
 Se importa file-loader para poder importar imagenes locales en componentes.
 Usado para añadir un icono al lado del mensaje de error cuando se introducen contraseña o email erroneos.
 https://www.npmjs.com/package//file-loader --- 28.1kb
+
+---
+

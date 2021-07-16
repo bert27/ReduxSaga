@@ -41,6 +41,11 @@ const TextBox = styled.div`
   height: auto;
   font-weight: bold;
   padding: 1%;
+  @media (max-width: 480px) {
+    margin-top: 8px;
+    font-size: 10px;
+    text-align: center;
+  }
 `;
 
 const TextLoading = styled.div`
@@ -69,6 +74,16 @@ const TextLoadingEmail = styled.div`
   }
 `;
 
+const CompletName = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
+`;
+
 interface user {
   avatar: string;
   email: string;
@@ -94,7 +109,7 @@ function UserCard({ item }: Props) {
                 height: "7em",
               }}
               src={item.avatar}
-              alt={item.first_name}
+              alt={"faceof" + item.first_name}
             />
           ) : (
             <PictureLoading />
@@ -103,25 +118,16 @@ function UserCard({ item }: Props) {
 
         <TextBox>
           {item.id !== 0 ? (
-            <div
-              style={{
-                marginBottom: "5px",
-              }}
-            >
-              {item.email}
-            </div>
-          ) : (
-            <TextLoading />
-          )}
-
-          {item.id !== 0 ? (
-            <div
-              style={{
-                marginBottom: "5px",
-              }}
-            >
-              {item.last_name}
-            </div>
+            <CompletName>
+              <div>{item.first_name}</div>
+              <div
+                style={{
+                  marginLeft: "4px",
+                }}
+              >
+                {item.last_name}
+              </div>
+            </CompletName>
           ) : (
             <TextLoading />
           )}
