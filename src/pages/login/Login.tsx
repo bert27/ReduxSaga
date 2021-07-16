@@ -4,6 +4,29 @@ import Button from "assets/input/Button";
 import { useHistory } from "react-router-dom";
 import * as actions from "./login_store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import styled from "styled-components";
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 8% 0% 0%;
+  align-items: center;
+  flex-direction: column;
+`;
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(32, 35, 37);
+  padding: 1% 5% 4%;
+`;
+const Title = styled.p`
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: 700;
+`;
 
 const Login = () => {
   //Redux
@@ -66,32 +89,9 @@ const Login = () => {
     setpassword(newpassword);
   }, []);
   return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        padding: "8% 0% 0% 0%",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          background: "#202325",
-          padding: "1% 5% 4% 5%",
-        }}
-      >
-        <p
-          style={{
-            fontWeight: "bold",
-            fontSize: "1.4em",
-          }}
-        >
-          Inicia Sesión con tu email
-        </p>
+    <Container>
+      <Card>
+        <Title>Inicia Sesión con tu email</Title>
         <div>
           <Input
             name="Correo electrónico"
@@ -108,8 +108,8 @@ const Login = () => {
         </div>
 
         <Button onClick={onLogin} text={"Iniciar Sesión"} big={true} />
-      </div>
-    </div>
+      </Card>
+    </Container>
   );
 };
 
