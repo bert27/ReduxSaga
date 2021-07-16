@@ -16,7 +16,7 @@ const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const history = useHistory();
-  let [error, seterror] = useState({
+  const [error, seterror] = useState({
     password: "",
     email: "",
   });
@@ -43,18 +43,20 @@ const Login = () => {
       dispatch(actions.getToken(data));
     }
     //Check errors:
+
+    let errortmp = error;
     if (passwordok !== password) {
-      error = { ...error, password: "contraseña incorrecta" };
+      errortmp = { ...errortmp, password: "contraseña incorrecta" };
     } else {
-      error = { ...error, password: "" };
+      errortmp = { ...errortmp, password: "" };
     }
     if (!re.test(email) && emailok !== email) {
-      error = { ...error, email: "correo incorrecto" };
+      errortmp = { ...errortmp, email: "correo incorrecto" };
     } else {
-      error = { ...error, email: "" };
+      errortmp = { ...errortmp, email: "" };
     }
 
-    seterror(error);
+    seterror(errortmp);
   }, [email, password, error, dispatch]);
 
   const onChangeEmail = useCallback((newemail) => {
