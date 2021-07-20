@@ -1,4 +1,4 @@
-# Prueba técnica React de LaLiga
+# Prueba técnica React Redux Saga
 
 ---
 <div classname="center">
@@ -13,7 +13,7 @@ Versión de NPM: 6.13.4 o superiror
 Compatibilidad: ES6 Navegadores evergreen (Chrome, Firefox, Edge, Safari)
 
 ## Instrucciones
-- [Instrucciones](src/docs/laliga-prueba-tecnica-instrucciones.md)
+En src/docs
 
 ## Entorno de desarrollo local
 
@@ -60,6 +60,7 @@ Se ha pensado en minimizar la espera del usuario entre cargas, añadiendo efecto
 Mientras no recibe ninguna id de ningun usuario, la id será 0 y se mostrará esqueleton. (Elementos en gris)
 
 Las acciones del programa se realizan mediante redux, actions y reducers.
+Redux-devtools añadido en la configuración de la tienda de redux.
 
 Las acciones iniciales ejecutan reduxsaga para llamar a una función que recoge los endpoints. La toma del token en el inicio de sesión y la lista de usuarios por página.
 

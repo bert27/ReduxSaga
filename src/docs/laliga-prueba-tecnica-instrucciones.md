@@ -1,10 +1,6 @@
-# Prueba técnica de Front End de LaLiga
+# Prueba técnica de Front End 
 
-Este documento comprende los requerimientos para realizar la prueba técnica de Front-End de LaLiga.
-
-Se requiere el uso de GIT para la realización de la prueba. Esperamos que nos facilites acceso a un repositorio privado, o este mismo comprimido y enviado como un archivo adjunto.
-
-Debes enviar el ejercicio contestando al correo desde el que has recibido la prueba, manteniendo en copia a las personas del mail original.
+Este documento comprende los requerimientos para realizar la prueba técnica de Front-End sobre ReduxSaga
 
 
 ## Historias de usuario a implementar
